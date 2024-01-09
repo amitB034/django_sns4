@@ -1,0 +1,7 @@
+__pycache__
+/volumes
+db/mysql_data/*
+!db/.gitkeep
+!db/mysql_data/.gitkeep
+.DS_Store
+tools

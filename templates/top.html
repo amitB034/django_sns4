@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block contents %}
+
+<div class = 'top-page'>
+    <div class = 'top-container'>
+        <h2>SNSAPP~no-title~へようこそ</h2>
+
+        <h5>日常の緩い出来事やポジティブな出来事を発信しよう！！</h5>
+        
+        {% if user.is_authenticated %}
+        <div class = 'topbtn'>
+            <button class = 'btn-auth' onClick = "location.href = '{% url 'timelines:index' %}'">タイムラインを見よう！</a>
+            <button class = 'btn-auth' onClick = "location.href = '{% url 'timelines:create' %}'">コメントを投稿しよう！</a>
+        </div>
+        {% else %}
+        <div class = 'tab'>
+            <ul class = 'tab_menu'>
+                <li class = 'tab_menu-item is-active' data-tab = '01'>このサイトについて</li>
+                <li class = 'tab_menu-item' data-tab = '02'>Get Start</li>
+            </ul>
+            <div class = 'tab_panel'>
+                <div class = 'tab_panel-box tab_panel-box001 is-show' data-tab = '01'>
+                    <h3>Concept</h3>
+                    <p>SNSです。。。</p>
+                </div>
+                <div class = 'tab_panel-box tab_panel-box002' data-tab = '02'>
+                    <p>アカウントをお持ちの方はこちら</p>
+                    <button class = 'btn-auth' onClick = "location.href = '{% url 'accounts:login' %}'">ログインして投稿しよう！</button>
+                    <br></br>
+                    <p>アカウントを持っていない方はこちら</p>
+                    <button class = 'btn-auth' onClick = "location.href = '{% url 'accounts:signup' %}'">アカウントを作成して投稿しよう！</button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<script src = '{% static 'js/index.js' %}'></script>
+{% endblock %}
