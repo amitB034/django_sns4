@@ -3,35 +3,25 @@
 
 {% block contents %}
 
-<div class = 'top-page'>
+<div class = 'flex-col items-center text-center'>
     <div class = 'top-container'>
-        <h2>Travel_Trip</h2>
+        <h2 class="text-4xl mt-10">Travel Trip</h2>
 
-        <h5>~美しい建造物、壮大な自然~</h5>
+        <h5 class="mt-5 w-30  p-3 rounded-xl bg-green-600 text-white">~美しい建造物、壮大な自然~</h5>
         
         {% if user.is_authenticated %}
         <div class = 'topbtn'>
-            <button class = 'btn-auth' onClick = "location.href = '{% url 'timelines:index' %}'">タイムラインを見よう！</a>
-            <button class = 'btn-auth' onClick = "location.href = '{% url 'timelines:create' %}'">コメントを投稿しよう！</a>
+            <button class = 'btn-auth' onClick = "location.href = '{% url 'timelines:index' %}'">投稿を見る</a>
+            <button class = 'btn-auth' onClick = "location.href = '{% url 'timelines:create' %}'">コメントを投稿する</a>
         </div>
         {% else %}
         <div class = 'tab'>
-            <ul class = 'tab_menu'>
-                <li class = 'tab_menu-item is-active' data-tab = '01'>このサイトについて</li>
-                <li class = 'tab_menu-item' data-tab = '02'>Get Start</li>
-            </ul>
-            <div class = 'tab_panel'>
-                <div class = 'tab_panel-box tab_panel-box001 is-show' data-tab = '01'>
-                    <h3>Concept</h3>
-                    <p>SNSです。。。</p>
-                </div>
                 <div class = 'tab_panel-box tab_panel-box002' data-tab = '02'>
                     <p>アカウントをお持ちの方はこちら</p>
-                    <button class = 'btn-auth' onClick = "location.href = '{% url 'accounts:login' %}'">ログインして投稿しよう！</button>
+                    <button class = 'btn-auth' onClick = "location.href = '{% url 'accounts:login' %}'">ログイン</button>
                     <br></br>
                     <p>アカウントを持っていない方はこちら</p>
-                    <button class = 'btn-auth' onClick = "location.href = '{% url 'accounts:signup' %}'">アカウントを作成して投稿しよう！</button>
-                </div>
+                    <button class = 'btn-auth' onClick = "location.href = '{% url 'accounts:signup' %}'">アカウント作成</button>
             </div>
         </div>
         {% endif %}
