@@ -6,17 +6,16 @@
     <div class = "form">
     <form method = 'post'>
         {% csrf_token %}
-        <h2 style = 'text-align:center'>返信する</h2>
+        <h2 style = 'text-align:center' class="text-4xl mt-10">コメントを書く</h2>
         <div class = 'form-area'>
             <div class = 'userinfo'>
                 <div class = 'info'>
-                <label for = 'Username'><span>必須</span>返信内容を入力してください</label>
-                    <div class="mb-3">
+                    <div class="mt-5">
                         {{ form.text }}
                     </div>
                 </div>
             </div>
-            <input type = 'submit' value = '返信する' />
+            <input class="mt-4 w-30  p-2 rounded-xl bg-green-600 hover:bg-green-700 text-white" type = 'submit' value = '返信する' />
         </div>
     </div>
 </div>

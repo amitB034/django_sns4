@@ -13,7 +13,7 @@
     <p class="card-text">{{ post.text }}</p>
     <div class="mt-2 mb-3">
       <a href = '{% url "timelines:detail" post.pk %}'>
-        <img src="{{ post.image }}" alt="post_image">
+        <img src="{{ post.image.url }}" alt="post_image">
       </a>
     </div>
     <p class="flex justify-between">
@@ -22,7 +22,7 @@
         <a href = '{% url "timelines:delete" post.pk %}' class="bg-red-600 p-1 text-white">削除する</a>
     {% endif %}
     </p>
-    <a href = '{% url "timelines:comment" post.pk %}' class ="">コメントを書く</a>
+    <a href = '{% url "timelines:comment" post.pk %}' class ="text-sky-500">コメントを書く</a>
   </div>
 </div>
 
@@ -39,7 +39,7 @@
   </div>
     <div class="card-body">
       <p class="card-text">{{ comment.text }}</p>
-      <a class = 'text-sky-500' onClick = "location.href = '{% url 'timelines:comment' post.pk %}'">返信する</a>
+      <a class = 'text-sky-500' href = '{% url "timelines:comment" post.pk %}'>返信する</a>
     </div>
   </div>
 {% endfor %}
