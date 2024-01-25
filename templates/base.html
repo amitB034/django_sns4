@@ -10,14 +10,13 @@
 
 <body class="bg-amber-200">
     <header>
-        <div class = ''>
               <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 {% if user.is_authenticated %}
                 <div class="container-fluid">
                   <a class="navbar-brand" href="{% url 'timelines:top' %}">
-                    Travel Trip
+                    Mag Trip
                   </a>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'timelines:index' %}">タイムライン</a>
@@ -31,12 +30,13 @@
                     </ul>
                   </div>
                 </div>
+
                 {% else %}
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{% url 'timelines:top' %}">
-                      Travel Trip
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <a class="navbar-brand" href="{% url 'timelines:top' %}">
+                    Mag Trip
+                  </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                           <a class="nav-link active" aria-current="page" href="{% url 'accounts:signup' %}">登録</a>
@@ -46,10 +46,6 @@
                   </div>
                 {% endif %}
               </nav>
-        </div>
-        
-        
-        
     </header>
     <main class="flex flex-col justify-center items-center w-30">{% block contents %}{% endblock %}</main> 
     <footer></footer>

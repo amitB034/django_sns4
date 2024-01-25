@@ -10,7 +10,7 @@
       <p class="card-text">{{ post.text }}</p>
         <form method = 'post'>
             {% csrf_token %}
-            <input type = 'submit' class = 'btn btn-primary' onclick = 'return alertFunc()' value = '削除する'/>
+            <input type = 'submit' class = 'bg-red-600 p-2 mt-3 text-white' onclick = 'return alertFunc()' value = '削除する'/>
         </form>
         <script>
             function alertFunc() {
@@ -18,7 +18,7 @@
                 if (del == true) {
                     return true;
                 } else {
-                    location.href = '{% url 'timelines:index' %}'
+                    location.href = '{% url "timelines:index" %}'
                     return false;
                 }
             }
