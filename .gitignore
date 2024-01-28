@@ -5,3 +5,4 @@ db/mysql_data/*
 !db/mysql_data/.gitkeep
 .DS_Store
 tools
+sns/media

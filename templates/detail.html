@@ -12,9 +12,13 @@
   <div class="card-body">
     <p class="card-text">{{ post.text }}</p>
     <div class="mt-2 mb-3">
-      <a href = '{% url "timelines:detail" post.pk %}'>
+      {% if post.image %}
         <img src="{{ post.image.url }}" alt="post_image">
-      </a>
+      {% else %}
+
+      {% endif %}
+        <p class="mt-4">場所：</p><br/>
+        <p>費用など：</p>
     </div>
     <p class="flex justify-between">
     {% if post.user == user %}
